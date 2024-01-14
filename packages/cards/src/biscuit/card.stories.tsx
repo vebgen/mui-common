@@ -8,7 +8,7 @@ import { Biscuit, BiscuitProps } from './card';
 
 
 const storybookConfig: Meta<BiscuitProps> = {
-    title: 'cards/biscuit/Biscuit',
+    title: 'cards/Biscuit',
     component: Biscuit,
     args: {
         title: "The Biscuit",
