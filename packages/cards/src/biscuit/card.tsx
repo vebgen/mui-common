@@ -22,13 +22,20 @@ export interface BiscuitProps extends Omit<CardProps, "title"> {
     /**
      * The title of this card.
      *
-     * If this is a string it will be considered a translation key and will be
-     * translated. Otherwise it is rendered as-is.
+     * If this is a string it will be translated using the `react-intl`
+     * library. If it is a component it will be rendered as is;
+     * make sure to wrap the string that you don't want translated
+     * with a fragment.
      */
     title: ReactNode;
 
     /**
      * The subtitle of this card.
+     *
+     * If this is a string it will be translated using the `react-intl`
+     * library. If it is a component it will be rendered as is;
+     * make sure to wrap the string that you don't want translated
+     * with a fragment.
      */
     subtitle?: ReactNode;
 
@@ -56,6 +63,14 @@ export interface BiscuitProps extends Omit<CardProps, "title"> {
 
 /**
  * The simple base card.
+ *
+ * The card has a fixed width of 345 pixels, is raised and consists
+ * of the standard MUI card components: header, content (the children
+ * are placed there) and actions.
+ *
+ * The header has an optional icon to the left and an optional action
+ * to the right. The title and subtitle can be a string or a component.
+ * The string will be translated using the `react-intl` library.
  */
 export const Biscuit: FC<BiscuitProps> = ({
     title,
@@ -81,11 +96,7 @@ export const Biscuit: FC<BiscuitProps> = ({
             }
             subheader={
                 (typeof subtitle === 'string' && subtitle) ? (
-                    <FormattedMessage
-                        id={subtitle}
-                        description={`Card subtitle`}
-                        defaultMessage={subtitle}
-                    />
+                    <FormattedMessage id={subtitle} />
                 ) : (
                     subtitle ?? undefined
                 )
