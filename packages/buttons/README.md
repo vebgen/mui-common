@@ -1,6 +1,10 @@
 # buttons
 
-This library was generated with [Nx](https://nx.dev).
+This library contains MUI-based buttons.
+
+Following buttons are available:
+
+- `RotatingBtn`> A button whose icon may rotate.
 
 ## Running unit tests
 

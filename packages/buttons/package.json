@@ -1,4 +1,29 @@
 {
     "name": "@vebgen/mui-buttons",
-    "version": "0.0.1"
+    "description": "MUI-based buttons",
+    "version": "0.0.1",
+    "private": false,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vebgen/mui-common.git",
+        "directory": "packages/buttons"
+    },
+    "bugs": {
+        "url": "https://github.com/vebgen/mui-common/issues"
+    },
+    "homepage": "https://github.com/vebgen/mui-common",
+    "license": "MIT",
+    "keywords": [
+        "mui", "buttons"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "directory": "../../dist/packages/buttons"
+    },
+    "peerDependencies": {
+        "@emotion/styled": "^11.11.0",
+        "@mui/material": "^5.15.4",
+        "core-js": "^3.34.0",
+        "react": "18.2.0"
+    }
 }

@@ -2,6 +2,8 @@ import { HTMLAttributes, MouseEvent, useState, useCallback } from 'react';
 import { StyledComponent } from '@emotion/styled';
 import { ColorResult, SketchPicker } from 'react-color';
 import { styled, IconButton, Popover, PopoverOrigin } from '@mui/material';
+import { byteToHex } from '@vebgen/js-common';
+
 
 /**
  * A simple div that presents a color.
@@ -17,7 +19,6 @@ export const ColorDiv: StyledComponent<HTMLAttributes<HTMLDivElement>> = styled(
 import {  } from 'react';
 import {  } from '@mui/material';
 
-import { byteToHex } from '@advaita/alchepy.base';
 
 const anchorOrigin: PopoverOrigin = {
     vertical: 'bottom',
