@@ -1,0 +1,40 @@
+{
+    "name": "cards",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/cards/src",
+    "projectType": "library",
+    "tags": ["mui cards"],
+    "targets": {
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "outputs": ["{options.outputFile}"]
+        },
+        "build": {
+            "executor": "@nx/rollup:rollup",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/packages/cards",
+                "tsConfig": "packages/cards/tsconfig.lib.json",
+                "project": "packages/cards/package.json",
+                "entryFile": "packages/cards/src/index.ts",
+                "external": ["react", "react-dom", "react/jsx-runtime"],
+                "rollupConfig": "@nx/react/plugins/bundle-rollup",
+                "compiler": "babel",
+                "assets": [
+                    {
+                        "glob": "packages/cards/README.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/cards/jest.config.ts"
+            }
+        }
+    }
+}

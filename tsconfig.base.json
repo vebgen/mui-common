@@ -15,7 +15,9 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-
+            "@vebgen/mui-buttons": ["packages/buttons/src/index.ts"],
+            "@vebgen/mui-cards": ["packages/cards/src/index.ts"],
+            "@vebgen/mui-icon-btns": ["packages/icon-btns/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

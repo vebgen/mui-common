@@ -15,7 +15,7 @@ pnpm exec nx generate @nx/react:library \
     --unitTestRunner=jest \
     --bundler=rollup  \
     --component=false \
-    --importPath=@yournamespace/some-name \
+    --importPath=@vebgen/some-name \
     --publishable=true  \
     --style=none \
     --tags="a b c" \

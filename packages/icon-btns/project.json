@@ -1,0 +1,40 @@
+{
+    "name": "icon-btns",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/icon-btns/src",
+    "projectType": "library",
+    "tags": ["mui cards"],
+    "targets": {
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "outputs": ["{options.outputFile}"]
+        },
+        "build": {
+            "executor": "@nx/rollup:rollup",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/packages/icon-btns",
+                "tsConfig": "packages/icon-btns/tsconfig.lib.json",
+                "project": "packages/icon-btns/package.json",
+                "entryFile": "packages/icon-btns/src/index.ts",
+                "external": ["react", "react-dom", "react/jsx-runtime"],
+                "rollupConfig": "@nx/react/plugins/bundle-rollup",
+                "compiler": "babel",
+                "assets": [
+                    {
+                        "glob": "packages/icon-btns/README.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/icon-btns/jest.config.ts"
+            }
+        }
+    }
+}
