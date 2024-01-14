@@ -35,6 +35,49 @@
             "options": {
                 "jestConfig": "packages/buttons/jest.config.ts"
             }
+        },
+        "storybook": {
+            "executor": "@nx/storybook:storybook",
+            "options": {
+                "port": 4400,
+                "configDir": "packages/buttons/.storybook"
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "build-storybook": {
+            "executor": "@nx/storybook:build",
+            "outputs": ["{options.outputDir}"],
+            "options": {
+                "outputDir": "dist/storybook/buttons",
+                "configDir": "packages/buttons/.storybook"
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "test-storybook": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "test-storybook -c packages/buttons/.storybook --url=http://localhost:4400"
+            }
+        },
+        "static-storybook": {
+            "executor": "@nx/web:file-server",
+            "options": {
+                "buildTarget": "buttons:build-storybook",
+                "staticFilePath": "dist/storybook/buttons"
+            },
+            "configurations": {
+                "ci": {
+                    "buildTarget": "buttons:build-storybook:ci"
+                }
+            }
         }
     }
 }

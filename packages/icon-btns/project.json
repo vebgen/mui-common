@@ -35,6 +35,49 @@
             "options": {
                 "jestConfig": "packages/icon-btns/jest.config.ts"
             }
+        },
+        "storybook": {
+            "executor": "@nx/storybook:storybook",
+            "options": {
+                "port": 4400,
+                "configDir": "packages/icon-btns/.storybook"
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "build-storybook": {
+            "executor": "@nx/storybook:build",
+            "outputs": ["{options.outputDir}"],
+            "options": {
+                "outputDir": "dist/storybook/icon-btns",
+                "configDir": "packages/icon-btns/.storybook"
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "test-storybook": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "test-storybook -c packages/icon-btns/.storybook --url=http://localhost:4400"
+            }
+        },
+        "static-storybook": {
+            "executor": "@nx/web:file-server",
+            "options": {
+                "buildTarget": "icon-btns:build-storybook",
+                "staticFilePath": "dist/storybook/icon-btns"
+            },
+            "configurations": {
+                "ci": {
+                    "buildTarget": "icon-btns:build-storybook:ci"
+                }
+            }
         }
     }
 }

@@ -35,6 +35,49 @@
             "options": {
                 "jestConfig": "packages/cards/jest.config.ts"
             }
+        },
+        "storybook": {
+            "executor": "@nx/storybook:storybook",
+            "options": {
+                "port": 4400,
+                "configDir": "packages/cards/.storybook"
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "build-storybook": {
+            "executor": "@nx/storybook:build",
+            "outputs": ["{options.outputDir}"],
+            "options": {
+                "outputDir": "dist/storybook/cards",
+                "configDir": "packages/cards/.storybook"
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "test-storybook": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "test-storybook -c packages/cards/.storybook --url=http://localhost:4400"
+            }
+        },
+        "static-storybook": {
+            "executor": "@nx/web:file-server",
+            "options": {
+                "buildTarget": "cards:build-storybook",
+                "staticFilePath": "dist/storybook/cards"
+            },
+            "configurations": {
+                "ci": {
+                    "buildTarget": "cards:build-storybook:ci"
+                }
+            }
         }
     }
 }
