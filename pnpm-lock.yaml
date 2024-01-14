@@ -271,7 +271,21 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
 
-  packages/buttons: {}
+  packages/buttons:
+    dependencies:
+      '@emotion/styled':
+        specifier: ^11.11.0
+        version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.43)(react@18.2.0)
+      '@mui/material':
+        specifier: ^5.15.4
+        version: 5.15.4(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.43)(react-dom@18.2.0)(react@18.2.0)
+      core-js:
+        specifier: ^3.34.0
+        version: 3.34.0
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+    publishDirectory: ../../dist/packages/buttons
 
   packages/cards:
     dependencies:
@@ -292,7 +306,21 @@ importers:
         version: 6.5.5(react@18.2.0)(typescript@5.3.3)
     publishDirectory: ../../dist/packages/cards
 
-  packages/icon-btns: {}
+  packages/icon-btns:
+    dependencies:
+      '@emotion/styled':
+        specifier: ^11.11.0
+        version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.43)(react@18.2.0)
+      '@mui/material':
+        specifier: ^5.15.4
+        version: 5.15.4(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.43)(react-dom@18.2.0)(react@18.2.0)
+      core-js:
+        specifier: ^3.34.0
+        version: 3.34.0
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+    publishDirectory: ../../dist/packages/icon-btns
 
 packages:
 
