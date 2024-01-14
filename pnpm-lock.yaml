@@ -23,6 +23,15 @@ importers:
       '@swc/helpers':
         specifier: ~0.5.3
         version: 0.5.3
+      '@vebgen/debug':
+        specifier: ^0.0.1
+        version: 0.0.1(core-js@3.34.0)
+      '@vebgen/js-common':
+        specifier: ^0.0.1
+        version: 0.0.1(core-js@3.34.0)
+      '@vebgen/logger':
+        specifier: ^0.0.1
+        version: 0.0.1(@vebgen/js-common@0.0.1)(core-js@3.34.0)
       core-js:
         specifier: ^3.34.0
         version: 3.34.0
@@ -314,6 +323,9 @@ importers:
       '@mui/material':
         specifier: ^5.15.4
         version: 5.15.4(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.43)(react-dom@18.2.0)(react@18.2.0)
+      '@vebgen/js-common':
+        specifier: ^0.0.1
+        version: 0.0.1(core-js@3.34.0)
       core-js:
         specifier: ^3.34.0
         version: 3.34.0
@@ -7159,6 +7171,32 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@vebgen/debug@0.0.1(core-js@3.34.0):
+    resolution: {integrity: sha512-7wOSP7EzToEeGD5sZjaVMHlyKLeRf3SOp6QHsujPCk9Ihg+K7qVze1UnsY83E1SuBRhsNBF/w+xa0ZY8LkKzrg==}
+    peerDependencies:
+      core-js: ^3.34.0
+    dependencies:
+      core-js: 3.34.0
+    dev: false
+
+  /@vebgen/js-common@0.0.1(core-js@3.34.0):
+    resolution: {integrity: sha512-9LpL6n9vK/1N9PfQ0nYTjWLTHsJBEoSqofaGclvH4a0DZ+wXFknC6iGfrwnt00Zq6b8kmxlzwYsVXwsHW1jpJA==}
+    peerDependencies:
+      core-js: ^3.34.0
+    dependencies:
+      core-js: 3.34.0
+    dev: false
+
+  /@vebgen/logger@0.0.1(@vebgen/js-common@0.0.1)(core-js@3.34.0):
+    resolution: {integrity: sha512-sEh+uwH/ZLY2PbZJq7rIwC1bYLnC2w6icuxZpd8EL09nQzu5ytBUBmHZDbP05mt97vQxNbRv8WVa3rRAFYegZg==}
+    peerDependencies:
+      '@vebgen/js-common': ^0.0.1
+      core-js: ^3.34.0
+    dependencies:
+      '@vebgen/js-common': 0.0.1(core-js@3.34.0)
+      core-js: 3.34.0
+    dev: false
 
   /@webassemblyjs/ast@1.11.6:
     resolution: {integrity: sha512-IN1xI7PwOvLPgjcf180gC1bqn3q/QaOCwYUahIOhbYUu8KA/3tw2RT/T0Gidi1l7Hhj5D/INhJxiICObqpMu4Q==}
