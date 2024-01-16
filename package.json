@@ -1,6 +1,6 @@
 {
     "name": "@vebgen/mui-common",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Simple, common React components based on the material-ui library",
     "license": "MIT",
     "private": true,

@@ -17,7 +17,8 @@
                 "tsConfig": "packages/icon-btns/tsconfig.lib.json",
                 "project": "packages/icon-btns/package.json",
                 "entryFile": "packages/icon-btns/src/index.ts",
-                "external": ["react", "react-dom", "react/jsx-runtime"],
+                "external": "all",
+                "format": ["esm", "cjs"],
                 "rollupConfig": "@nx/react/plugins/bundle-rollup",
                 "compiler": "babel",
                 "assets": [
